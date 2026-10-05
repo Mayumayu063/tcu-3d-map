@@ -1,0 +1,736 @@
+/* =================================
+   基本設定
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+
+  background: #ffffff;
+}
+
+
+/* =================================
+   トップページ
+================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-image: url("../images/campus-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 39, 79, 0.82),
+      rgba(0, 102, 184, 0.55),
+      rgba(255, 255, 255, 0.25)
+    );
+
+  backdrop-filter: blur(2px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  color: white;
+
+  padding: 40px;
+
+  animation: fadeUp 1s ease;
+}
+
+.university-name {
+  font-size: 13px;
+  letter-spacing: 0.25em;
+
+  margin-bottom: 20px;
+
+  opacity: 0.9;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 72px);
+
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+}
+
+h1 span {
+  display: block;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.mode-buttons {
+  margin-top: 35px;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.mode-button {
+  width: 220px;
+  min-height: 95px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+
+  color: white;
+
+  border-radius: 12px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.student-button {
+  background: rgba(0, 126, 214, 0.92);
+}
+
+.admin-button {
+  background: rgba(9, 45, 80, 0.92);
+}
+
+.mode-button:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(0, 0, 0, 0.25);
+}
+
+.button-small {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+
+  opacity: 0.8;
+
+  margin-bottom: 6px;
+}
+
+.button-title {
+  font-size: 21px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =================================
+   トップページ スマホ対応
+================================= */
+
+@media (max-width: 650px) {
+  .mode-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mode-button {
+    width: 260px;
+  }
+
+  .hero-content {
+    padding: 25px;
+  }
+}
+
+
+/* =================================
+   3D MAPページ
+================================= */
+
+.map-page {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #f5f8fb;
+}
+
+
+/* =================================
+   上部ヘッダー
+================================= */
+
+.map-header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 72px;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom:
+    1px solid
+    rgba(0, 70, 130, 0.12);
+}
+
+.back-button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: #123c63;
+
+  font-size: 24px;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.2s ease;
+}
+
+.back-button:hover {
+  background:
+    rgba(0, 100, 180, 0.08);
+}
+
+.map-title {
+  margin-left: 14px;
+
+  color: #173c5f;
+
+  font-size: 13px;
+
+  letter-spacing: 0.08em;
+}
+
+.map-title strong {
+  margin-left: 6px;
+
+  font-size: 15px;
+
+  letter-spacing: 0.12em;
+}
+
+.mode-label {
+  margin-left: auto;
+
+  padding: 9px 18px;
+
+  color: white;
+
+  border-radius: 100px;
+
+  font-size: 13px;
+
+  letter-spacing: 0.08em;
+}
+
+.student-mode {
+  background: #078bd8;
+}
+
+.admin-mode {
+  background: #123e68;
+}
+
+
+/* =================================
+   3Dモデル
+================================= */
+
+.map-container {
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: 72px;
+}
+
+model-viewer {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      rgba(20, 90, 145, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 90, 145, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      180deg,
+      #f7fafc,
+      #e3edf6
+    );
+
+  background-size:
+    40px 40px,
+    40px 40px,
+    auto;
+
+  --poster-color: transparent;
+}
+
+
+/* =================================
+   ローディング画面
+================================= */
+
+.loader {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #0b4f82;
+
+  color: white;
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.loader.loaded {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+.loader-logo {
+  text-align: center;
+}
+
+.loader-logo span {
+  display: block;
+
+  font-size: 18px;
+
+  letter-spacing: 0.08em;
+}
+
+.loader-logo strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 32px;
+
+  letter-spacing: 0.15em;
+}
+
+.loader-line {
+  width: 150px;
+  height: 2px;
+
+  margin-top: 30px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+}
+
+.loader-line::after {
+  content: "";
+
+  display: block;
+
+  width: 50%;
+  height: 100%;
+
+  background: white;
+
+  animation:
+    loadingLine
+    1.2s
+    infinite ease-in-out;
+}
+
+@keyframes loadingLine {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(200%);
+  }
+}
+
+/* =================================
+   建物ピン
+================================= */
+
+.hotspot {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+/* ラベル本体 */
+
+.hotspot span {
+     position: relative;
+
+  min-width: 78px;
+  height: 38px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  color: #087fca;
+
+  border:
+    2px solid
+    #087fca;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 6px 18px
+    rgba(0, 60, 110, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hotspot span::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -7px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #087fca;
+}
+
+/* マウスを乗せたとき */
+
+.hotspot:hover span {
+  transform: translateY(-2px) scale(1.04);
+
+  background: #087fca;
+
+  color: white;
+
+  box-shadow:
+    0 10px 24px
+    rgba(0, 60, 110, 0.28);
+}
+
+/* =================================
+   パネル外クリックエリア
+================================= */
+
+.panel-backdrop {
+  position: fixed;
+
+  top: 72px;
+  left: 0;
+
+  width: 50%;
+  height: calc(100vh - 72px);
+
+  z-index: 15;
+
+  display: none;
+}
+
+.panel-backdrop.active {
+  display: block;
+}
+
+
+/* =================================
+   建物情報パネル
+================================= */
+
+.info-panel {
+  position: fixed;
+
+  top: 72px;
+  right: 0;
+
+  width: 50%;
+  height: calc(100vh - 72px);
+
+  z-index: 20;
+
+ background-image:
+  linear-gradient(
+    135deg,
+    rgba(5, 49, 88, 0.94),
+    rgba(0, 112, 185, 0.86)
+  ),
+  url("../images/building01.jpg");
+
+background-size: cover;
+
+background-position: center;
+
+background-repeat: no-repeat;
+
+  color: white;
+
+  transform: translateX(100%);
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  box-shadow:
+    -20px 0 50px
+    rgba(0, 40, 80, 0.14);
+
+  overflow: hidden;
+}
+
+.info-panel.active {
+  transform: translateX(0);
+}
+
+.panel-close {
+  position: absolute;
+
+  top: 25px;
+  left: 28px;
+
+  width: 44px;
+  height: 44px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-size: 21px;
+
+  cursor: pointer;
+}
+
+.panel-content {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 80px;
+}
+
+.panel-number {
+  font-size: 11px;
+
+  letter-spacing: 0.2em;
+
+  opacity: 0.7;
+}
+
+.panel-content h2 {
+  margin-top: 10px;
+
+  font-size: 48px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+}
+
+.panel-links {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.panel-links a {
+  width: 100%;
+
+  padding: 18px 20px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  color: white;
+
+  font-size: 14px;
+
+  transition:
+    background 0.2s ease;
+}
+
+.panel-links a:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+/* =================================
+   3D MAP スマホ対応
+================================= */
+
+@media (max-width: 700px) {
+  .info-panel {
+    width: 88%;
+  }
+
+  .panel-backdrop {
+    width: 12%;
+  }
+
+  .panel-content {
+    padding: 45px;
+  }
+}
+
+.panel-facilities {
+  max-width: 620px;
+
+  margin-top: 18px;
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  letter-spacing: 0.03em;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+}

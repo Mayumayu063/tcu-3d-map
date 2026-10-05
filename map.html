@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>東京都市大学 3D MAP</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="module"
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <script src="js/map.js" defer></script>
+</head>
+
+
+<body class="map-page">
+
+  <!-- 読み込み画面 -->
+  <div id="loader" class="loader">
+    <div class="loader-logo">
+      <span>東京都市大学</span>
+      <strong>3D MAP</strong>
+    </div>
+
+    <div class="loader-line"></div>
+  </div>
+
+
+  <!-- 上部バー -->
+  <header class="map-header">
+
+    <a href="index.html"
+       class="back-button">
+      ←
+    </a>
+
+    <div class="map-title">
+      東京都市大学
+      <strong>3D MAP</strong>
+    </div>
+
+    <div id="mode-label"
+         class="mode-label">
+    </div>
+
+  </header>
+
+
+  <!-- 3D MAP -->
+  <main class="map-container">
+
+    <model-viewer
+      id="campus-model"
+
+  src="models/campus.glb"
+
+  camera-controls
+
+ camera-orbit="-0.7714891050137856rad 0.7452164391779793rad 19.010539720020976m"
+
+  camera-target="2.283662471466705m 0.7470341358175698m 2.344002009310164m"
+
+  field-of-view="17.901896371695244deg"
+
+  touch-action="pan-y"
+
+  shadow-intensity="0.7"
+
+  exposure="1"
+
+  environment-image="neutral">
+
+
+  <!-- 1号館のピン -->
+  <button
+    class="hotspot"
+    slot="hotspot-building1"
+   data-position="4.190946682041417m 0.7716017726873141m -0.8029638991587262m"
+
+data-normal="0m 1m 0m"
+    data-building="building1">
+
+    <span>1号館</span>
+
+  </button>
+
+<!-- 2号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building2"
+   data-position="5.780997466737089m 0.7257812320361137m 1.481310636476832m"
+  data-normal="0m 1m 0m"
+  data-building="building2">
+
+  <span>2号館</span>
+
+</button>
+
+<!-- 3号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building3"
+  data-position="4.315109674752992m 0.7169889574588008m 1.0591623640886467m"
+  data-normal="0m 1m 0m"
+  data-building="building3">
+
+  <span>3号館</span>
+
+</button>
+
+
+<!-- 4号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building4"
+  data-position="5.023069511456926m 0.6367005987844414m 3.052774311875029m"
+  data-normal="0m 1m 0m"
+  data-building="building4">
+
+  <span>4号館</span>
+
+</button>
+
+
+<!-- 5号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building5"
+  data-position="4.762093804588629m 0.5121856526718944m 4.112287185268827m"
+  data-normal="0m 1m 0m"
+  data-building="building5">
+
+  <span>5号館</span>
+
+</button>
+
+
+<!-- 6号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building6"
+  data-position="4.837961492463389m 0.7692150051486537m 5.9263837932609045m"
+  data-normal="0m 1m 0m"
+  data-building="building6">
+
+  <span>6号館</span>
+
+</button>
+
+
+<!-- 7号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building7"
+  data-position="2.666752687590295m 0.7555549257197665m 2.922787164584264m"
+  data-normal="0m 1m 0m"
+  data-building="building7">
+
+  <span>7号館</span>
+
+</button>
+
+
+<!-- 8号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building8"
+  data-position="0.9514599369751902m 0.5775263800079635m -0.8272601349494886m"
+  data-normal="0m 1m 0m"
+  data-building="building8">
+
+  <span>8号館</span>
+
+</button>
+
+
+<!-- 9号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building9"
+  data-position="-0.4181581427991268m 0.6314099248730543m -0.06665789199689398m"
+  data-normal="0m 1m 0m"
+  data-building="building9">
+
+  <span>9号館</span>
+
+</button>
+
+
+<!-- 10号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building10"
+  data-position="-0.4784111310442949m 0.6876310046667946m 1.2479447187790966m"
+  data-normal="0m 1m 0m"
+  data-building="building10">
+
+  <span>10号館</span>
+
+</button>
+
+
+<!-- 11号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building11"
+  data-position="-3.2148919495937056m 0.689087312133509m 0.9480291798585678m"
+  data-normal="0m 1m 0m"
+  data-building="building11">
+
+  <span>11号館</span>
+
+</button>
+
+
+<!-- 12号館 -->
+<button
+  class="hotspot"
+  slot="hotspot-building12"
+  data-position="-2.1387012513436545m 0.4254131069195406m 0.008404574705075885m"
+  data-normal="0m 1m 0m"
+  data-building="building12">
+
+  <span>12号館</span>
+
+</button>
+
+</model-viewer>
+
+
+  </main>
+<!-- パネル外をクリックするための透明エリア -->
+<div
+  id="panel-backdrop"
+  class="panel-backdrop">
+</div>
+
+
+<!-- 建物情報パネル -->
+<aside
+  id="info-panel"
+  class="info-panel">
+
+  <button
+    id="panel-close"
+    class="panel-close">
+    ←
+  </button>
+
+  <div class="panel-content">
+
+   <p
+  id="panel-number"
+  class="panel-number">
+  BUILDING 01
+</p>
+
+<h2 id="panel-title">
+  1号館
+</h2>
+
+<p
+  id="panel-facilities"
+  class="panel-facilities">
+</p>
+
+  <div
+  id="panel-links"
+  class="panel-links">
+</div>
+
+  </div>
+
+</aside>
+</body>
+
+</html>
